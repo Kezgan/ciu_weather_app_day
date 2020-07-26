@@ -49,5 +49,6 @@ function fechas(d) {
   var hora = d.getHours()
   var minutos = d.getMinutes()
 
-  return `${dia}, ${fecha} ${mes} ${año} ${hora}:${minutos}`
+  return `${dia}, ${fecha} ${mes} ${año}
+  ${hora}:${minutos}`
 }
