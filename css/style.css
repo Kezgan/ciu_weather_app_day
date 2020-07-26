@@ -86,6 +86,11 @@ hr {
     text-align: center;
 }
 
+#icon-sky {
+    margin: 0 auto;
+    width: 50px;
+}
+
 #temp {
     position: absolute;
     top: 50%;
