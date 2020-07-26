@@ -37,28 +37,28 @@ a, a:visited, a:link, a:active{
 /* Tab de la app */
 
 .tab {
-    display: table;
+    display: flex;
     width: 100%;
     height: 3.5em;
     text-align: center;
-    padding: 12px;
+    align-items: center;
+    padding: 13px;
 }
 
 .tab-child {
-    padding: 5px;
     float: left;
 }
 
 #fecha {
     font-weight: 200;
-    font-size: 0.5em;
     width: 50%;
+    vertical-align:middle;
 }
 
 #localidad {
     font-weight: bold;
     width: 50%;
-    height: 36px;
+    vertical-align: middle;
 }
 
 #localidad-id {
@@ -81,6 +81,7 @@ hr {
 }
 
 .current-child {
+    position: relative;
     vertical-align: top;
     display: inline-block;
     background-color: rgba(31, 31, 31, 0.3);
@@ -93,9 +94,13 @@ hr {
 }
 
 #temp {
-    display: table;
-    margin: 0 auto;
-    font-size: 2.5rem;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-size: 3rem;
 }
 
 /* Segunda fila */
