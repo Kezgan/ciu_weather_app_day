@@ -48,7 +48,7 @@ a, a:visited, a:link, a:active{
 }
 
 #date {
-    font-weight: normal;
+    font-weight: 200;
     font-size: 0.5em;
     width: 50%;
 }
@@ -60,7 +60,6 @@ a, a:visited, a:link, a:active{
 }
 
 #location-id {
-    display:table-cell;
     vertical-align:middle;
 }
 
@@ -79,7 +78,7 @@ hr {
 
 .current-child {
     display: inline-block;
-    background-color: #1d1d1d;
+    background-color: rgba(31, 31, 31, 0.3);
     width: 30%;
     height: 101px;
     border-radius: 10px;
@@ -97,6 +96,40 @@ hr {
 
 #temp-max-min {
     
+}
+
+.info {
+    width: 92%;
+    height: 101px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.info-child {
+    display: inline-block;
+    background-color: rgba(31, 31, 31, 0.3);
+    width: 30%;
+    height: 101px;
+    border-radius: 10px;
+    margin: 0 4px;
+    padding: 10px;
+}
+
+.sun {
+    width: 92%;
+    height: 101px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+.sun-child {
+    display: inline-block;
+    background-color: rgba(31, 31, 31, 0.3);
+    width: 30%;
+    height: 101px;
+    border-radius: 10px;
+    margin: 0 4px;
+    padding: 10px;
 }
 
 /* 
