@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css" type="text/css">
-        <title>CIU Weather App</title>
+        <title>Clima</title>
     </head>
     <body>
         <header>
@@ -12,19 +12,26 @@
         </header>
 
         <main>
-            <div class="tabs">
-                <div class="tabs-child" id="date">
+            <div class="tab">
+                <div class="tab-child" id="fecha">
                     <span>Miércoles, 24 de Diciembre del 2020 - 22:00</span>
                 </div>
-                <div class="tabs-child" id="location">
-                    <span id="location-id"><a href="https://www.google.com/maps/place/Hurlingham,+Buenos+Aires+Province/@-34.5910172,-58.6557366,14z/data=!3m1!4b1!4m5!3m4!1s0x95bcb9254c083df5:0x87b633dca0937bac!8m2!3d-34.589571!4d-58.6275502">Hurlingham, Buenos Aires</a></span>
+                <div class="tab-child" id="localidad">
+                    <span id="localidad-id"><a href="https://www.google.com/maps/place/Hurlingham,+Buenos+Aires+Province/@-34.5910172,-58.6557366,14z/data=!3m1!4b1!4m5!3m4!1s0x95bcb9254c083df5:0x87b633dca0937bac!8m2!3d-34.589571!4d-58.6275502">Hurlingham, Buenos Aires</a></span>
                 </div>
             </div>
             <hr>
             <div class="current">
-                <div class="current-child" id="sky"></div>
-                <div class="current-child" id="temp"></div>
-                <div class="current-child" id="temp-max-min"></div>
+                <div class="current-child">
+                    <span id="icon-sky"></span>
+                    <span id="current-sky"></span>
+                </div>
+                <div class="current-child">
+                    <div id="temp"></div>
+                </div>
+                <div class="current-child" id="temp-max-min">
+
+                </div>
             </div>
 
             <div class="info">
