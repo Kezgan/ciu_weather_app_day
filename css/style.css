@@ -133,11 +133,6 @@ hr {
     font-weight: lighter;
 }
 
-.arrows {
-    color: rgba(255, 255, 255);
-    width: 50px;
-}
-
 /* Segunda fila */
 
 .info {
@@ -158,8 +153,18 @@ hr {
     padding: 10px;
 }
 
-#icon-hum {
-    
+.icon-info {
+    width: 30px;
+    margin: 5px auto;
+}
+
+.dato-info {
+    padding: 5px;
+}
+
+.desc-info {
+    font-size: 0.8rem;
+    font-weight: lighter;
 }
 
 /* Tercera fila */

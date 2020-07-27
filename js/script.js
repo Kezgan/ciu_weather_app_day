@@ -7,6 +7,16 @@ var now = new Date()
 var fecha = document.querySelector('#fecha')
 
 var icon_hum = document.querySelector("#icon-hum")
+var current_hum = document.querySelector("#dato-hum")
+var desc_hum = document.querySelector("#desc-hum")
+
+var icon_pres = document.querySelector("#icon-pres")
+var current_pres = document.querySelector("#dato-pres")
+var desc_pres = document.querySelector("#desc-pres")
+
+var icon_wind = document.querySelector("#icon-wind")
+var current_wind = document.querySelector("#dato-wind")
+var desc_wind = document.querySelector("#desc-wind")
 
 // https://api.openweathermap.org/data/2.5/weather?q=northampton&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac
 
@@ -45,6 +55,14 @@ function mostrarResultados(clima) {
   maxmin.innerHTML = `${Math.round(clima.daily[0].temp.max)}<span class="grados">°c</span>` + " | " + `${Math.round(clima.daily[0].temp.min)}<span class="grados">°c</span>`
 
   icon_hum.src = `images/hum.png`
+  current_hum.innerHTML = `${clima.current.humidity}%`
+  desc_hum.innerHTML = "Humedad"
+  icon_pres.src = `images/pres.png`
+  current_pres.innerHTML = `${clima.current.pressure}mBar`
+  desc_pres.innerHTML = "Presión"
+  icon_wind.src = `images/wind.png`
+  current_wind.innerHTML = `${Math.round(clima.current.wind_speed*3.6)}km/h`
+  desc_wind.innerHTML = "Viento"
 }
 
 function fechas(d) {
