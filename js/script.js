@@ -1,7 +1,8 @@
 var icon = document.querySelector("#icon-sky")
 var sky = document.querySelector('#current-sky')
 var temp = document.querySelector('#temp')
-var maxmin = document.querySelector('#temp-max-min')
+var max = document.querySelector('#temp-max')
+var min = document.querySelector('#temp-min')
 var now = new Date()
 var fecha = document.querySelector('#fecha')
 
@@ -35,13 +36,14 @@ function mostrarResultados(clima) {
   console.log(clima)
   fecha.innerText = fechas(now)
   icon.src = `http://openweathermap.org/img/wn/${clima.current.weather[0].icon}@2x.png`
-  sky.innerText = `${clima.current.weather[0].main}`
-  temp.innerHTML = `${Math.round(clima.current.temp)}<span>°C</span>`
-  maxmin.innerText = `${Math.round(clima.current.temp_max)}`
+  /*sky.innerText = `${clima.current.weather[0].main}`*/
+  temp.innerHTML = `${Math.round(clima.current.temp)}<span class="grados">°c</span>`
+  max.innerHTML = `${Math.round(clima.daily[0].temp.max)}<span class="grados">°c</span>`
+  min.innerHTML = `${Math.round(clima.daily[0].temp.min)}<span class="grados">°c</span>`
 }
 
 function fechas(d) {
-  var meses = ["Enero", "Febrero", "March", "Abril", "Mayo", "Junio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
+  var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"]
   var dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]
 
   var dia = dias[d.getDay()]
