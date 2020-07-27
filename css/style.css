@@ -121,7 +121,7 @@ hr {
 }
 
 #temp-max-min {
-    color: rgba(255, 255, 255, 0.5);
+    color: #aaaaaa;
     position: absolute;
     width: 100%;
     top: 50%;
@@ -145,7 +145,6 @@ hr {
 .info-child {
     vertical-align: top;
     display: inline-block;
-    background-color: rgba(31, 31, 31, 0.2);
     width: 30%;
     height: 101px;
     border-radius: 10px;
@@ -154,16 +153,17 @@ hr {
 }
 
 .icon-info {
-    width: 30px;
-    margin: 5px auto;
+    width: 25px;
+    margin: 7.5px auto;
 }
 
 .dato-info {
+    font-size: 0.9rem;
     padding: 5px;
 }
 
 .desc-info {
-    font-size: 0.8rem;
+    font-size: 0.7rem;
     font-weight: lighter;
 }
 
@@ -179,7 +179,6 @@ hr {
 .sun-child {
     vertical-align: top;
     display: inline-block;
-    background-color: rgba(31, 31, 31, 0.2);
     width: 30%;
     height: 101px;
     border-radius: 10px;

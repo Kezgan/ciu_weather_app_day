@@ -18,6 +18,14 @@ var icon_wind = document.querySelector("#icon-wind")
 var current_wind = document.querySelector("#dato-wind")
 var desc_wind = document.querySelector("#desc-wind")
 
+var icon_sunrise = document.querySelector("#icon-sunrise")
+var current_sunrise = document.querySelector("#dato-sunrise")
+var desc_sunrise = document.querySelector("#desc-sunrise")
+
+var icon_sunset = document.querySelector("#icon-sunset")
+var current_sunset = document.querySelector("#dato-sunset")
+var desc_sunset = document.querySelector("#desc-sunset")
+
 // https://api.openweathermap.org/data/2.5/weather?q=northampton&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac
 
 // https://api.openweathermap.org/data/2.5/onecall?lat=-34.5910185&lon=-58.638227&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac
@@ -58,11 +66,19 @@ function mostrarResultados(clima) {
   current_hum.innerHTML = `${clima.current.humidity}%`
   desc_hum.innerHTML = "Humedad"
   icon_pres.src = `images/pres.png`
-  current_pres.innerHTML = `${clima.current.pressure}mBar`
+  current_pres.innerHTML = `${clima.current.pressure}hPa`
   desc_pres.innerHTML = "Presión"
   icon_wind.src = `images/wind.png`
   current_wind.innerHTML = `${Math.round(clima.current.wind_speed*3.6)}km/h`
   desc_wind.innerHTML = "Viento"
+
+  icon_sunrise.src = `images/sunrise.png`
+  current_sunrise.innerHTML = `${Math.round(clima.current.sunrise)}`
+  desc_sunrise.innerHTML = "Amanecer"
+
+  icon_sunset.src = `images/sunset.png`
+  current_sunset.innerHTML = `${Math.round(clima.current.sunset)}`
+  desc_sunset.innerHTML = "Atardecer"
 }
 
 function fechas(d) {
