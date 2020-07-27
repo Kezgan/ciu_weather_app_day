@@ -73,11 +73,27 @@ function mostrarResultados(clima) {
   desc_wind.innerHTML = "Viento"
 
   icon_sunrise.src = `images/sunrise.png`
-  current_sunrise.innerHTML = `${Math.round(clima.current.sunrise)}`
+
+  var unix_sunrise = `${clima.current.sunrise}`
+  var date_sunrise = new Date(unix_sunrise*1000)
+  var hour_sunrise = date_sunrise.getHours()
+  var hour_sunrise = ("0" + hour_sunrise).slice(-2)
+  var min_sunrise = date_sunrise.getMinutes()
+  var min_sunrise = ("0" + min_sunrise).slice(-2)
+
+  current_sunrise.innerHTML = `${hour_sunrise}:${min_sunrise}`
   desc_sunrise.innerHTML = "Amanecer"
 
   icon_sunset.src = `images/sunset.png`
-  current_sunset.innerHTML = `${Math.round(clima.current.sunset)}`
+
+  var unix_sunset = `${clima.current.sunset}`
+  var date_sunset = new Date(unix_sunset*1000)
+  var hour_sunset = date_sunset.getHours()
+  var hour_sunset = ("0" + hour_sunset).slice(-2)
+  var min_sunset = date_sunset.getMinutes()
+  var min_sunset = ("0" + min_sunset).slice(-2)
+
+  current_sunset.innerHTML = `${hour_sunset}:${min_sunset}`
   desc_sunset.innerHTML = "Atardecer"
 }
 
