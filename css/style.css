@@ -92,12 +92,21 @@ hr {
 
 #icon-sky {
     position: absolute;
-    top: 50%;
+    top: 35%;
     left: 50%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
     width: 80px;
+}
+
+#current-sky {
+    position: absolute;
+    top: 75%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
 }
 
 #temp {
@@ -114,23 +123,19 @@ hr {
 #temp-max-min {
     color: rgba(255, 255, 255, 0.5);
     position: absolute;
+    width: 100%;
     top: 50%;
     left: 50%;
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    font-size: 3rem;
+    font-size: 1.7rem;
     font-weight: normal;
 }
 
-#temp-max {
-    font-size: 1.8rem;
-    padding: 8px;
-}
-
-#temp-min {
-    font-size: 1.8rem;
-    padding: 8px;
+.arrows {
+    color: rgba(255, 255, 255);
+    width: 50px;
 }
 
 /* Segunda fila */
@@ -151,6 +156,10 @@ hr {
     border-radius: 10px;
     margin: 0 4px;
     padding: 10px;
+}
+
+#icon-hum {
+    
 }
 
 /* Tercera fila */
