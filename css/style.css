@@ -129,8 +129,8 @@ hr {
     -moz-transform: translateX(-50%) translateY(-50%);
     -webkit-transform: translateX(-50%) translateY(-50%);
     transform: translateX(-50%) translateY(-50%);
-    font-size: 1.7rem;
-    font-weight: normal;
+    font-size: 1.3rem;
+    font-weight: lighter;
 }
 
 .arrows {
