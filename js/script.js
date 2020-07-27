@@ -26,26 +26,25 @@ var icon_sunset = document.querySelector("#icon-sunset")
 var current_sunset = document.querySelector("#dato-sunset")
 var desc_sunset = document.querySelector("#desc-sunset")
 
-// https://api.openweathermap.org/data/2.5/weather?q=northampton&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac
+var icon_array_1 = document.querySelector("#icon-array-1")
 
-// https://api.openweathermap.org/data/2.5/onecall?lat=-34.5910185&lon=-58.638227&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac
 
-/*
-const api = {
-  url_current: "http://api.openweathermap.org/data/2.5/weather?q=hurlingham&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac",
-  url_weekly: "https://api.openweathermap.org/data/2.5/onecall?lat=-34.5910185&lon=-58.638227&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac"
-}
+var icon_array_2 = document.querySelector("#icon-array-2")
 
-fetch(`${api.url_current}`)
-  .then(clima_actual => {return clima_actual.json();})
-  .then(mostrarResultados)
-;
 
-fetch(`${api.url_weekly}`)
-  .then(clima_semanal => {return clima_semanal.json();})
-  .then(mostrarResultados)
-;
-*/
+var icon_array_3 = document.querySelector("#icon-array-3")
+
+
+var icon_array_4 = document.querySelector("#icon-array-4")
+
+
+var icon_array_5 = document.querySelector("#icon-array-5")
+
+
+var icon_array_6 = document.querySelector("#icon-array-6")
+
+
+var icon_array_7 = document.querySelector("#icon-array-7")
 
 fetch("https://api.openweathermap.org/data/2.5/onecall?lat=-34.5910185&lon=-58.638227&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac")
   .then(clima => {return clima.json();})
@@ -60,7 +59,7 @@ function mostrarResultados(clima) {
   icon_sky.src = `http://openweathermap.org/img/wn/${clima.current.weather[0].icon}@2x.png`
   current_sky.innerText = `${clima.current.weather[0].main}`
   temp.innerHTML = `${Math.round(clima.current.temp)}<span class="grados">°c</span>`
-  maxmin.innerHTML = `${Math.round(clima.daily[0].temp.max)}<span class="grados">°c</span>` + " | " + `${Math.round(clima.daily[0].temp.min)}<span class="grados">°c</span>`
+  maxmin.innerHTML = `${Math.round(clima.daily[0].temp.max)}<span class="grados">°c</span>` + " / " + `${Math.round(clima.daily[0].temp.min)}<span class="grados">°c</span>`
 
   icon_hum.src = `images/hum.png`
   current_hum.innerHTML = `${clima.current.humidity}%`
@@ -95,6 +94,26 @@ function mostrarResultados(clima) {
 
   current_sunset.innerHTML = `${hour_sunset}:${min_sunset}`
   desc_sunset.innerHTML = "Atardecer"
+
+  icon_array_1.src = `http://openweathermap.org/img/wn/${clima.daily[1].weather[0].icon}@2x.png`
+
+
+  icon_array_2.src = `http://openweathermap.org/img/wn/${clima.daily[2].weather[0].icon}@2x.png`
+
+
+  icon_array_3.src = `http://openweathermap.org/img/wn/${clima.daily[3].weather[0].icon}@2x.png`
+
+
+  icon_array_4.src = `http://openweathermap.org/img/wn/${clima.daily[4].weather[0].icon}@2x.png`
+
+
+  icon_array_5.src = `http://openweathermap.org/img/wn/${clima.daily[5].weather[0].icon}@2x.png`
+  
+
+  icon_array_6.src = `http://openweathermap.org/img/wn/${clima.daily[6].weather[0].icon}@2x.png`
+
+
+  icon_array_7.src = `http://openweathermap.org/img/wn/${clima.daily[7].weather[0].icon}@2x.png`
 }
 
 function fechas(d) {

@@ -81,7 +81,7 @@ hr {
     position: relative;
     vertical-align: top;
     display: inline-block;
-    background-color: rgba(31, 31, 31, 0.2);
+    background-color: rgba(31, 31, 31, 0.3);
     width: 30%;
     height: 101px;
     border-radius: 10px;
@@ -184,4 +184,39 @@ hr {
     border-radius: 10px;
     margin: 0 4px;
     padding: 10px;
+}
+
+/* Cuarta fila */
+
+.contenedor-swiper {
+    width: 92%;
+    height: 101px;
+    margin: 20px auto;
+}
+
+.contenedor-swiper.child {
+    position: relative;
+    vertical-align: top;
+    display: inline-block;
+    background-color: rgba(31, 31, 31, 0.3);
+    width: 30%;
+    height: 101px;
+    border-radius: 10px;
+    margin: 0 4px;
+    padding: 10px;
+    text-align: center;
+}
+
+.slide1 {
+    
+}
+
+.icon-slide {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    width: 50px;
 }
