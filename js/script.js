@@ -18,6 +18,10 @@ var icon_wind = document.querySelector("#icon-wind")
 var current_wind = document.querySelector("#dato-wind")
 var desc_wind = document.querySelector("#desc-wind")
 
+var icon_clouds = document.querySelector("#icon-clouds")
+var current_clouds = document.querySelector("#dato-clouds")
+var desc_clouds = document.querySelector("#desc-clouds")
+
 var icon_sunrise = document.querySelector("#icon-sunrise")
 var current_sunrise = document.querySelector("#dato-sunrise")
 var desc_sunrise = document.querySelector("#desc-sunrise")
@@ -27,24 +31,32 @@ var current_sunset = document.querySelector("#dato-sunset")
 var desc_sunset = document.querySelector("#desc-sunset")
 
 var icon_array_1 = document.querySelector("#icon-array-1")
-
+var dia_array_1 = document.querySelector("#dia-array-1")
+var maxmin_array_1 = document.querySelector("#maxmin-array-1")
 
 var icon_array_2 = document.querySelector("#icon-array-2")
-
+var dia_array_2 = document.querySelector("#dia-array-2")
+var maxmin_array_2 = document.querySelector("#maxmin-array-2")
 
 var icon_array_3 = document.querySelector("#icon-array-3")
-
+var dia_array_3 = document.querySelector("#dia-array-3")
+var maxmin_array_3 = document.querySelector("#maxmin-array-3")
 
 var icon_array_4 = document.querySelector("#icon-array-4")
-
+var dia_array_4 = document.querySelector("#dia-array-4")
+var maxmin_array_4 = document.querySelector("#maxmin-array-4")
 
 var icon_array_5 = document.querySelector("#icon-array-5")
-
+var dia_array_5 = document.querySelector("#dia-array-5")
+var maxmin_array_5 = document.querySelector("#maxmin-array-5")
 
 var icon_array_6 = document.querySelector("#icon-array-6")
-
+var dia_array_6 = document.querySelector("#dia-array-6")
+var maxmin_array_6 = document.querySelector("#maxmin-array-6")
 
 var icon_array_7 = document.querySelector("#icon-array-7")
+var dia_array_7 = document.querySelector("#dia-array-7")
+var maxmin_array_7 = document.querySelector("#maxmin-array-7")
 
 fetch("https://api.openweathermap.org/data/2.5/onecall?lat=-34.5910185&lon=-58.638227&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac")
   .then(clima => {return clima.json();})
@@ -71,14 +83,18 @@ function mostrarResultados(clima) {
   current_wind.innerHTML = `${Math.round(clima.current.wind_speed*3.6)}km/h`
   desc_wind.innerHTML = "Viento"
 
+  icon_clouds.src = `images/clouds.png`
+  current_clouds.innerHTML = `${clima.current.clouds}%`
+  desc_clouds.innerHTML = "Nubes"
+
   icon_sunrise.src = `images/sunrise.png`
 
   var unix_sunrise = `${clima.current.sunrise}`
   var date_sunrise = new Date(unix_sunrise*1000)
   var hour_sunrise = date_sunrise.getHours()
-  var hour_sunrise = ("0" + hour_sunrise).slice(-2)
+  hour_sunrise = ("0" + hour_sunrise).slice(-2)
   var min_sunrise = date_sunrise.getMinutes()
-  var min_sunrise = ("0" + min_sunrise).slice(-2)
+  min_sunrise = ("0" + min_sunrise).slice(-2)
 
   current_sunrise.innerHTML = `${hour_sunrise}:${min_sunrise}`
   desc_sunrise.innerHTML = "Amanecer"
@@ -96,24 +112,32 @@ function mostrarResultados(clima) {
   desc_sunset.innerHTML = "Atardecer"
 
   icon_array_1.src = `http://openweathermap.org/img/wn/${clima.daily[1].weather[0].icon}@2x.png`
-
+  
+  maxmin_array_1.innerHTML = `${Math.round(clima.daily[1].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[1].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_2.src = `http://openweathermap.org/img/wn/${clima.daily[2].weather[0].icon}@2x.png`
 
+  maxmin_array_2.innerHTML = `${Math.round(clima.daily[2].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[2].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_3.src = `http://openweathermap.org/img/wn/${clima.daily[3].weather[0].icon}@2x.png`
 
+  maxmin_array_3.innerHTML = `${Math.round(clima.daily[3].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[3].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_4.src = `http://openweathermap.org/img/wn/${clima.daily[4].weather[0].icon}@2x.png`
 
+  maxmin_array_4.innerHTML = `${Math.round(clima.daily[4].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[4].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_5.src = `http://openweathermap.org/img/wn/${clima.daily[5].weather[0].icon}@2x.png`
   
+  maxmin_array_5.innerHTML = `${Math.round(clima.daily[5].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[5].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_6.src = `http://openweathermap.org/img/wn/${clima.daily[6].weather[0].icon}@2x.png`
 
+  maxmin_array_6.innerHTML = `${Math.round(clima.daily[6].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[6].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_7.src = `http://openweathermap.org/img/wn/${clima.daily[7].weather[0].icon}@2x.png`
+
+  maxmin_array_7.innerHTML = `${Math.round(clima.daily[7].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[7].temp.min)}<span class="grados-minmax">°c ↓</span>`
 }
 
 function fechas(d) {
@@ -125,9 +149,9 @@ function fechas(d) {
   var mes = meses[d.getMonth()]
   var año = d.getFullYear()
   var hora = d.getHours()
-  var hora = ("0" + hora).slice(-2)
+  hora = ("0" + hora).slice(-2)
   var minutos = d.getMinutes()
-  var minutos = ("0" + minutos).slice(-2)
+  minutos = ("0" + minutos).slice(-2)
 
   return `${dia}, ${fecha} ${mes} ${año}
   ${hora}:${minutos}`
