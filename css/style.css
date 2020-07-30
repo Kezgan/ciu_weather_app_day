@@ -103,7 +103,7 @@ hr {
     position: relative;
     vertical-align: top;
     display: inline-block;
-    background-color: rgba(170, 170, 170, 0.3);
+    background-color: rgba(170, 170, 170, 0.5);
     width: 30%;
     height: 101px;
     border-radius: 10px;
@@ -233,7 +233,7 @@ hr {
 }
 
 .slide {
-    background-color: rgba(170, 170, 170, 0.3);
+    background-color: rgba(170, 170, 170, 0.5);
     border-radius: 10px;
 }
 
