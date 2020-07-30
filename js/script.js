@@ -183,3 +183,8 @@ function dtSlider(clima, n) {
 
   return `${dia_slider}, ${num_slider}`
 }
+
+function darkMode() {
+
+}
+
