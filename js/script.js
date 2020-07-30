@@ -69,25 +69,37 @@ function mostrarResultados(clima) {
 
   fecha.innerText = fechas(now)
 
+  /* Cielo */
   icon_sky.src = `http://openweathermap.org/img/wn/${clima.current.weather[0].icon}@2x.png`
   current_sky.innerText = `${clima.current.weather[0].main}`
+
+  /* Temperatura actual */
   temp.innerHTML = `${Math.round(clima.current.temp)}<span class="grados">°c</span>`
+
+  /* Temperatura maxima y minima */
   maxmin.innerHTML = `${Math.round(clima.daily[0].temp.max)}<span class="grados">°c</span>` + " / " + `${Math.round(clima.daily[0].temp.min)}<span class="grados">°c</span>`
 
+  /* Humedad */ 
   icon_hum.src = `images/hum.png`
   current_hum.innerHTML = `${clima.current.humidity}%`
   desc_hum.innerHTML = "Humedad"
+
+  /* Presión */
   icon_pres.src = `images/pres.png`
   current_pres.innerHTML = `${clima.current.pressure}hPa`
   desc_pres.innerHTML = "Presión"
+
+  /* Viento */
   icon_wind.src = `images/wind.png`
   current_wind.innerHTML = `${Math.round(clima.current.wind_speed*3.6)}km/h`
   desc_wind.innerHTML = "Viento"
 
+  /* Porcentaje de nubes */
   icon_clouds.src = `images/clouds.png`
   current_clouds.innerHTML = `${clima.current.clouds}%`
   desc_clouds.innerHTML = "Nubes"
 
+  /* Amanecer */
   icon_sunrise.src = `images/sunrise.png`
 
   var unix_sunrise = `${clima.current.sunrise}`
@@ -100,6 +112,7 @@ function mostrarResultados(clima) {
   current_sunrise.innerHTML = `${hour_sunrise}:${min_sunrise}`
   desc_sunrise.innerHTML = "Amanecer"
 
+  /* Atardecer */
   icon_sunset.src = `images/sunset.png`
 
   var unix_sunset = `${clima.current.sunset}`
@@ -112,6 +125,7 @@ function mostrarResultados(clima) {
   current_sunset.innerHTML = `${hour_sunset}:${min_sunset}`
   desc_sunset.innerHTML = "Atardecer"
 
+  /* Slider */
   icon_array_1.src = `http://openweathermap.org/img/wn/${clima.daily[1].weather[0].icon}@2x.png`
   dia_array_1.innerHTML = dtSlider(clima, 1)
   maxmin_array_1.innerHTML = `${Math.round(clima.daily[1].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[1].temp.min)}<span class="grados-minmax">°c ↓</span>`
