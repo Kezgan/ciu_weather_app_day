@@ -61,6 +61,7 @@ var maxmin_array_7 = document.querySelector("#maxmin-array-7")
 fetch("https://api.openweathermap.org/data/2.5/onecall?lat=-34.5910185&lon=-58.638227&units=metric&appid=6ec0c3105628563c8314d5586f05b7ac")
   .then(clima => {return clima.json();})
   .then(mostrarResultados)
+  .then(dtSlider)
 ;
 
 function mostrarResultados(clima) {
@@ -112,31 +113,31 @@ function mostrarResultados(clima) {
   desc_sunset.innerHTML = "Atardecer"
 
   icon_array_1.src = `http://openweathermap.org/img/wn/${clima.daily[1].weather[0].icon}@2x.png`
-  dia_array_1.innerHTML = fechaSlider(now, 1)
+  dia_array_1.innerHTML = dtSlider(clima, 1)
   maxmin_array_1.innerHTML = `${Math.round(clima.daily[1].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[1].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_2.src = `http://openweathermap.org/img/wn/${clima.daily[2].weather[0].icon}@2x.png`
-  dia_array_2.innerHTML = fechaSlider(now, 2)
+  dia_array_2.innerHTML = dtSlider(clima, 2)
   maxmin_array_2.innerHTML = `${Math.round(clima.daily[2].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[2].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_3.src = `http://openweathermap.org/img/wn/${clima.daily[3].weather[0].icon}@2x.png`
-  dia_array_3.innerHTML = fechaSlider(now, 3)
+  dia_array_3.innerHTML = dtSlider(clima, 3)
   maxmin_array_3.innerHTML = `${Math.round(clima.daily[3].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[3].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_4.src = `http://openweathermap.org/img/wn/${clima.daily[4].weather[0].icon}@2x.png`
-  dia_array_4.innerHTML = fechaSlider(now, 4)
+  dia_array_4.innerHTML = dtSlider(clima, 4)
   maxmin_array_4.innerHTML = `${Math.round(clima.daily[4].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[4].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_5.src = `http://openweathermap.org/img/wn/${clima.daily[5].weather[0].icon}@2x.png`
-  dia_array_5.innerHTML = fechaSlider(now, 5)
+  dia_array_5.innerHTML = dtSlider(clima, 5)
   maxmin_array_5.innerHTML = `${Math.round(clima.daily[5].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[5].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_6.src = `http://openweathermap.org/img/wn/${clima.daily[6].weather[0].icon}@2x.png`
-  dia_array_6.innerHTML = fechaSlider(now, 6)
+  dia_array_6.innerHTML = dtSlider(clima, 6)
   maxmin_array_6.innerHTML = `${Math.round(clima.daily[6].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[6].temp.min)}<span class="grados-minmax">°c ↓</span>`
 
   icon_array_7.src = `http://openweathermap.org/img/wn/${clima.daily[7].weather[0].icon}@2x.png`
-  dia_array_7.innerHTML = fechaSlider(now, 7)
+  dia_array_7.innerHTML = dtSlider(clima, 7)
   maxmin_array_7.innerHTML = `${Math.round(clima.daily[7].temp.max)}<span class="grados-minmax">°c ↑</span>` + '&nbsp' + '&nbsp' + `${Math.round(clima.daily[7].temp.min)}<span class="grados-minmax">°c ↓</span>`
 }
 
@@ -157,10 +158,14 @@ function fechas(d) {
   ${hora}:${minutos}`
 }
 
-function fechaSlider(d) {
+function dtSlider(clima, n) {
+  var unix_slider = `${clima.daily[n].dt}`
+  var date_slider = new Date(unix_slider*1000)
+  
   var dias = ["Domingo", "Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado"]
 
-  var dia = d.getDate()+2
+  var dia_slider = dias[date_slider.getDay()]
+  var num_slider = date_slider.getDate()
 
-  return `${dia}`
+  return `${dia_slider}, ${num_slider}`
 }
