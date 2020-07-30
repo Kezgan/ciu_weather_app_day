@@ -234,6 +234,7 @@ hr {
 
 .slide {
     border-radius: 10px;
+    border: 1px solid rgba(170, 170, 170, 0.7);
 }
 
 .icon-slide {
